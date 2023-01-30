@@ -1,159 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20230124 23:28:42.402" rpa="false" schemaversion="3">
-<suite id="s1" name="TC" source="C:\Users\Admin\PycharmProjects\APIAutomation\VideoGamesApi\TC.robot">
-<test id="s1-t1" name="Get_games" line="9">
+<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20230130 21:17:55.332" rpa="false" schemaversion="3">
+<suite id="s1" name="TC4 json" source="C:\Users\Admin\PycharmProjects\APIAutomation\TestCases\TC4_json.robot">
+<test id="s1-t1" name="Get country info" line="11">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20230124 23:28:42.616" level="INFO">Creating Session using : alias=mysession, url=http://localhost:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20230124 23:28:42.616" endtime="20230124 23:28:42.617"/>
+<msg timestamp="20230130 21:17:55.638" level="INFO">Creating Session using : alias=mysession, url=https://restful-booker.herokuapp.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230130 21:17:55.638" endtime="20230130 21:17:55.639"/>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <var>${response}</var>
 <arg>mysession</arg>
-<arg>app/videogames</arg>
+<arg>/booking/2276</arg>
 <doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
-<msg timestamp="20230124 23:28:42.618" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg timestamp="20230124 23:28:42.636" level="INFO">GET Request : url=http://localhost:8080/app/videogames 
- path_url=/app/videogames 
+<msg timestamp="20230130 21:17:55.639" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20230130 21:17:56.119" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking/2276 
+ path_url=/booking/2276 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20230124 23:28:42.664" level="INFO">GET Response : url=http://localhost:8080/app/videogames 
- status=200, reason= 
- headers={'Content-Type': 'application/xml', 'Content-Length': '2320', 'Date': 'Tue, 24 Jan 2023 22:28:42 GMT'} 
- body=&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;videoGames&gt;&lt;videoGame category="strategy" rating="high"&gt;&lt;id&gt;0&lt;/id&gt;&lt;name&gt;Paladin&lt;/name&gt;&lt;releaseDate&gt;2022-01-24T00:00:00+01:00&lt;/releaseDate&gt;&lt;reviewScore&gt;0&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Shooter" rating="Universal"&gt;&lt;id&gt;1&lt;/id&gt;&lt;name&gt;Resident Evil 4&lt;/name&gt;&lt;releaseDate&gt;2005-10-01T00:00:00+02:00&lt;/releaseDate&gt;&lt;reviewScore&gt;85&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Driving" rating="Universal"&gt;&lt;id&gt;2&lt;/id&gt;&lt;name&gt;Gran Turismo 3&lt;/name&gt;&lt;releaseDate&gt;2001-03-10T00:00:00+01:00&lt;/releaseDate&gt;&lt;reviewScore&gt;91&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Puzzle" rating="Universal"&gt;&lt;id&gt;3&lt;/id&gt;&lt;name&gt;Tetris&lt;/name&gt;&lt;releaseDate&gt;1984-06-25T00:00:00+02:00&lt;/releaseDate&gt;&lt;reviewScore&gt;88&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Platform" rating="Universal"&gt;&lt;id&gt;4&lt;/id&gt;&lt;name&gt;Super Mario 64&lt;/name&gt;&lt;releaseDate&gt;1996-10-20T00:00:00+02:00&lt;/releaseDate&gt;&lt;reviewScore&gt;90&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Adventure" rating="PG-13"&gt;&lt;id&gt;5&lt;/id&gt;&lt;name&gt;The Legend of Zelda: Ocarina of Time&lt;/name&gt;&lt;releaseDate&gt;1998-12-10T00:00:00+01:00&lt;/releaseDate&gt;&lt;reviewScore&gt;93&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Shooter" rating="Mature"&gt;&lt;id&gt;6&lt;/id&gt;&lt;name&gt;Doom&lt;/name&gt;&lt;releaseDate&gt;1993-02-18T00:00:00+01:00&lt;/releaseDate&gt;&lt;reviewScore&gt;81&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Puzzle" rating="Universal"&gt;&lt;id&gt;7&lt;/id&gt;&lt;name&gt;Minecraft&lt;/name&gt;&lt;releaseDate&gt;2011-12-05T00:00:00+01:00&lt;/releaseDate&gt;&lt;reviewScore&gt;77&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Strategy" rating="Universal"&gt;&lt;id&gt;8&lt;/id&gt;&lt;name&gt;SimCity 2000&lt;/name&gt;&lt;releaseDate&gt;1994-09-11T00:00:00+02:00&lt;/releaseDate&gt;&lt;reviewScore&gt;88&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="RPG" rating="PG-13"&gt;&lt;id&gt;9&lt;/id&gt;&lt;name&gt;Final Fantasy VII&lt;/name&gt;&lt;releaseDate&gt;1997-08-20T00:00:00+02:00&lt;/releaseDate&gt;&lt;reviewScore&gt;97&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Driving" rating="Mature"&gt;&lt;id&gt;10&lt;/id&gt;&lt;name&gt;Grand Theft Auto III&lt;/name&gt;&lt;releaseDate&gt;2001-04-23T00:00:00+02:00&lt;/releaseDate&gt;&lt;reviewScore&gt;90&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="strategy"&gt;&lt;id&gt;100&lt;/id&gt;&lt;name&gt;Paladin&lt;/name&gt;&lt;releaseDate&gt;2022-01-24T00:00:00+01:00&lt;/releaseDate&gt;&lt;reviewScore&gt;2&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame&gt;&lt;id&gt;101&lt;/id&gt;&lt;name&gt;Paladinx&lt;/name&gt;&lt;releaseDate&gt;2022-01-24T00:00:00+01:00&lt;/releaseDate&gt;&lt;reviewScore&gt;2&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;/videoGames&gt; 
+<msg timestamp="20230130 21:17:56.119" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking/2276 
+ status=404, reason=Not Found 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '9', 'Etag': 'W/"9-0gXL1ngzMqISxa6S1zx3F4wtLyg"', 'Date': 'Mon, 30 Jan 2023 20:18:02 GMT', 'Via': '1.1 vegur'} 
+ body=Not Found 
  </msg>
-<msg timestamp="20230124 23:28:42.665" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230124 23:28:42.617" endtime="20230124 23:28:42.665"/>
+<msg timestamp="20230130 21:17:56.119" level="INFO">C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230130 21:17:56.120" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20230130 21:17:55.639" endtime="20230130 21:17:56.120"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230124 23:28:42.665" endtime="20230124 23:28:42.666"/>
+<status status="PASS" starttime="20230130 21:17:56.122" endtime="20230130 21:17:56.123"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230124 23:28:42.667" endtime="20230124 23:28:42.671"/>
+<status status="PASS" starttime="20230130 21:17:56.124" endtime="20230130 21:17:56.125"/>
 </kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${status_code}</var>
-<arg>${response.status_code}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20230124 23:28:42.672" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20230124 23:28:42.671" endtime="20230124 23:28:42.672"/>
+<kw name="To Json" library="RequestsLibrary">
+<var>${json_object}</var>
+<arg>${response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<msg timestamp="20230130 21:17:56.126" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg timestamp="20230130 21:17:56.129" level="FAIL">JSONDecodeError: Expecting value: line 1 column 1 (char 0)</msg>
+<status status="FAIL" starttime="20230130 21:17:56.126" endtime="20230130 21:17:56.132"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${name}</var>
+<arg>${json_object}</arg>
+<arg>$.firstname</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" starttime="20230130 21:17:56.132" endtime="20230130 21:17:56.132"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${name[0]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230130 21:17:56.133" endtime="20230130 21:17:56.133"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
-<arg>${status_code}</arg>
-<arg>200</arg>
+<arg>${name[0]}</arg>
+<arg>John</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20230124 23:28:42.672" endtime="20230124 23:28:42.673"/>
+<status status="NOT RUN" starttime="20230130 21:17:56.134" endtime="20230130 21:17:56.134"/>
 </kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${body}</var>
-<arg>${response.content}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20230124 23:28:42.674" level="INFO">${body} = &lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;videoGames&gt;&lt;videoGame category="strategy" rating="high"&gt;&lt;id&gt;0&lt;/id&gt;&lt;name&gt;Paladin&lt;/name&gt;&lt;releaseDate&gt;2022-01-24T00:00:00+01:00&lt;/releaseDate&gt;&lt;revie...</msg>
-<status status="PASS" starttime="20230124 23:28:42.673" endtime="20230124 23:28:42.674"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${body}</arg>
-<arg>Universal</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20230124 23:28:42.674" endtime="20230124 23:28:42.674"/>
-</kw>
-<status status="PASS" starttime="20230124 23:28:42.614" endtime="20230124 23:28:42.675"/>
+<status status="FAIL" starttime="20230130 21:17:55.637" endtime="20230130 21:17:56.135">JSONDecodeError: Expecting value: line 1 column 1 (char 0)</status>
 </test>
-<test id="s1-t2" name="Post_VideoGame" line="21">
-<kw name="Create Session" library="RequestsLibrary">
-<arg>mysession</arg>
-<arg>${base_url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20230124 23:28:42.678" level="INFO">Creating Session using : alias=mysession, url=http://localhost:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20230124 23:28:42.677" endtime="20230124 23:28:42.678"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${body}</var>
-<arg>id=102</arg>
-<arg>name=Shelby</arg>
-<arg>releaseDate=2021-01-23T20:27:51.102</arg>
-<arg>reviewScore=2</arg>
-<arg>category=y</arg>
-<arg>rating=low</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230124 23:28:42.680" level="INFO">${body} = {'id': '102', 'name': 'Shelby', 'releaseDate': '2021-01-23T20:27:51.102', 'reviewScore': '2', 'category': 'y', 'rating': 'low'}</msg>
-<status status="PASS" starttime="20230124 23:28:42.679" endtime="20230124 23:28:42.680"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${header}</var>
-<arg>Content-Type=application/json</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230124 23:28:42.681" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20230124 23:28:42.680" endtime="20230124 23:28:42.681"/>
-</kw>
-<kw name="Post Request" library="RequestsLibrary">
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/app/videogames</arg>
-<arg>data=${body}</arg>
-<arg>headers=${header}</arg>
-<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20230124 23:28:42.681" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20230124 23:28:42.691" level="INFO">POST Request : url=http://localhost:8080/app/videogames 
- path_url=/app/videogames 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '127'} 
- body={"id": "102", "name": "Shelby", "releaseDate": "2021-01-23T20:27:51.102", "reviewScore": "2", "category": "y", "rating": "low"} 
- </msg>
-<msg timestamp="20230124 23:28:42.711" level="INFO">POST Response : url=http://localhost:8080/app/videogames 
- status=200, reason= 
- headers={'Content-Type': 'application/xml', 'Content-Length': '39', 'Date': 'Tue, 24 Jan 2023 22:28:42 GMT'} 
- body={"status": "Record Added Successfully"} 
- </msg>
-<msg timestamp="20230124 23:28:42.711" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230124 23:28:42.681" endtime="20230124 23:28:42.712"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230124 23:28:42.712" endtime="20230124 23:28:42.713"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230124 23:28:42.714" endtime="20230124 23:28:42.715"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${status_code}</var>
-<arg>${response.status_code}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20230124 23:28:42.716" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20230124 23:28:42.716" endtime="20230124 23:28:42.716"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${res_body}</var>
-<arg>${response.content}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20230124 23:28:42.717" level="INFO">${res_body} = {"status": "Record Added Successfully"}</msg>
-<status status="PASS" starttime="20230124 23:28:42.717" endtime="20230124 23:28:42.717"/>
-</kw>
-<status status="PASS" starttime="20230124 23:28:42.676" endtime="20230124 23:28:42.718"/>
-</test>
-<status status="PASS" starttime="20230124 23:28:42.404" endtime="20230124 23:28:42.719"/>
+<status status="FAIL" starttime="20230130 21:17:55.335" endtime="20230130 21:17:56.138"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="TC">TC</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC4 json">TC4 json</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230124 23:28:42.618" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg timestamp="20230124 23:28:42.681" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230130 21:17:55.639" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20230130 21:17:56.126" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
 </errors>
 </robot>
