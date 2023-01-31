@@ -1,6 +1,6 @@
 *** Settings ***
 Library    XML
-Library    OS
+Library    os
 Library    Collections
 
 *** Variables ***
@@ -26,3 +26,21 @@ TestCase1
 
     #Check attribute presence
     element attribute should be     ${xml_obj}      CustomerID  GREAL       .//Customer[1]
+    element attribute should be    ${xml_obj}       CustomerID   HUNGC      .//Customer[2]
+
+    #Check value of child elements
+   ${child_Elements}=  get child elements    ${xml_obj}     .//Customer[1]
+   should not be empty    ${child_Elements}
+
+    #Get the text of the first element of the first child element
+    ${companyName}=     get element text    ${child_Elements[0]}
+    ${contactName}   get element text    ${child_Elements[1]}
+    ${contactTitle}  get element text    ${child_Elements[2]}
+    ${Phone}  get element text    ${child_Elements[3]}
+
+    log to console    ${companyName}
+    log to console    ${contactName}
+    log to console    ${contactTitle}
+    log to console    ${Phone}
+
+    should be equal    ${contactName}   Howard Snyder

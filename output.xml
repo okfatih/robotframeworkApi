@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20230130 23:21:08.672" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20230131 23:03:53.359" rpa="false" schemaversion="3">
 <suite id="s1" name="TC5 xml" source="C:\Users\Admin\PycharmProjects\APIAutomation\TestCases\TC5_xml.robot">
 <test id="s1-t1" name="TestCase1" line="9">
 <kw name="Parse Xml" library="XML">
 <var>${xml_obj}</var>
 <arg>C:/SeleniumPractice/xmldata/xmlFile.txt</arg>
 <doc>Parses the given XML file or string into an element structure.</doc>
-<msg timestamp="20230130 23:21:08.753" level="INFO">${xml_obj} = &lt;Element 'Root' at 0x00000203F7147F10&gt;</msg>
-<status status="PASS" starttime="20230130 23:21:08.752" endtime="20230130 23:21:08.753"/>
+<msg timestamp="20230131 23:03:53.587" level="INFO">${xml_obj} = &lt;Element 'Root' at 0x000001E6DD1E1D50&gt;</msg>
+<status status="PASS" starttime="20230131 23:03:53.583" endtime="20230131 23:03:53.587"/>
 </kw>
 <kw name="Get Element Text" library="XML">
 <var>${emp_first}</var>
 <arg>${xml_obj}</arg>
 <arg>.//Customer[1]/Phone</arg>
 <doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20230130 23:21:08.754" level="INFO">${emp_first} = (503) 555-7555</msg>
-<status status="PASS" starttime="20230130 23:21:08.754" endtime="20230130 23:21:08.755"/>
+<msg timestamp="20230131 23:03:53.590" level="INFO">${emp_first} = (503) 555-7555</msg>
+<status status="PASS" starttime="20230131 23:03:53.588" endtime="20230131 23:03:53.590"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${emp_first}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230130 23:21:08.755" endtime="20230130 23:21:08.756"/>
+<status status="PASS" starttime="20230131 23:03:53.592" endtime="20230131 23:03:53.593"/>
 </kw>
 <kw name="Get Element Text" library="XML">
 <var>${emp_sec}</var>
 <arg>${xml_obj}</arg>
 <arg>.//Customer[2]/Phone</arg>
 <doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20230130 23:21:08.757" level="INFO">${emp_sec} = (503) 555-6874</msg>
-<status status="PASS" starttime="20230130 23:21:08.756" endtime="20230130 23:21:08.757"/>
+<msg timestamp="20230131 23:03:53.594" level="INFO">${emp_sec} = (503) 555-6874</msg>
+<status status="PASS" starttime="20230131 23:03:53.593" endtime="20230131 23:03:53.594"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${emp_sec}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230130 23:21:08.758" endtime="20230130 23:21:08.758"/>
+<status status="PASS" starttime="20230131 23:03:53.595" endtime="20230131 23:03:53.596"/>
 </kw>
 <kw name="Get Element Count" library="XML">
 <var>${numberOfCustomers}</var>
 <arg>${xml_obj}</arg>
 <arg>.//Customer</arg>
 <doc>Returns and logs how many elements the given ``xpath`` matches.</doc>
-<msg timestamp="20230130 23:21:08.759" level="INFO">4 elements matched './/Customer'.</msg>
-<msg timestamp="20230130 23:21:08.759" level="INFO">${numberOfCustomers} = 4</msg>
-<status status="PASS" starttime="20230130 23:21:08.759" endtime="20230130 23:21:08.759"/>
+<msg timestamp="20230131 23:03:53.598" level="INFO">4 elements matched './/Customer'.</msg>
+<msg timestamp="20230131 23:03:53.598" level="INFO">${numberOfCustomers} = 4</msg>
+<status status="PASS" starttime="20230131 23:03:53.597" endtime="20230131 23:03:53.598"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${numberOfCustomers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230130 23:21:08.760" endtime="20230130 23:21:08.760"/>
+<status status="PASS" starttime="20230131 23:03:53.598" endtime="20230131 23:03:53.599"/>
 </kw>
 <kw name="Should Be Equal As Integers" library="BuiltIn">
 <arg>${numberOfCustomers}</arg>
 <arg>4</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<msg timestamp="20230130 23:21:08.761" level="INFO">Argument types are:
+<msg timestamp="20230131 23:03:53.602" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20230130 23:21:08.761" endtime="20230130 23:21:08.761"/>
+<status status="PASS" starttime="20230131 23:03:53.600" endtime="20230131 23:03:53.602"/>
 </kw>
 <kw name="Element Attribute Should Be" library="XML">
 <arg>${xml_obj}</arg>
@@ -64,11 +64,87 @@
 <arg>GREAL</arg>
 <arg>.//Customer[1]</arg>
 <doc>Verifies that the specified attribute is ``expected``.</doc>
-<status status="PASS" starttime="20230130 23:21:08.762" endtime="20230130 23:21:08.763"/>
+<status status="PASS" starttime="20230131 23:03:53.603" endtime="20230131 23:03:53.603"/>
 </kw>
-<status status="PASS" starttime="20230130 23:21:08.751" endtime="20230130 23:21:08.763"/>
+<kw name="Element Attribute Should Be" library="XML">
+<arg>${xml_obj}</arg>
+<arg>CustomerID</arg>
+<arg>HUNGC</arg>
+<arg>.//Customer[2]</arg>
+<doc>Verifies that the specified attribute is ``expected``.</doc>
+<status status="PASS" starttime="20230131 23:03:53.605" endtime="20230131 23:03:53.607"/>
+</kw>
+<kw name="Get Child Elements" library="XML">
+<var>${child_Elements}</var>
+<arg>${xml_obj}</arg>
+<arg>.//Customer[1]</arg>
+<doc>Returns the child elements of the specified element as a list.</doc>
+<msg timestamp="20230131 23:03:53.608" level="INFO">${child_Elements} = [&lt;Element 'CompanyName' at 0x000001E6DD1E1E40&gt;, &lt;Element 'ContactName' at 0x000001E6DD1E1EE0&gt;, &lt;Element 'ContactTitle' at 0x000001E6DD1E1F30&gt;, &lt;Element 'Phone' at 0x000001E6DD1E1FD0&gt;, &lt;Element 'FullAd...</msg>
+<status status="PASS" starttime="20230131 23:03:53.607" endtime="20230131 23:03:53.608"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${child_Elements}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20230131 23:03:53.609" level="INFO">Length is 5</msg>
+<status status="PASS" starttime="20230131 23:03:53.609" endtime="20230131 23:03:53.609"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${companyName}</var>
+<arg>${child_Elements[0]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20230131 23:03:53.611" level="INFO">${companyName} = Great Lakes Food Market</msg>
+<status status="PASS" starttime="20230131 23:03:53.610" endtime="20230131 23:03:53.611"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${contactName}</var>
+<arg>${child_Elements[1]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20230131 23:03:53.615" level="INFO">${contactName} = Howard Snyder</msg>
+<status status="PASS" starttime="20230131 23:03:53.612" endtime="20230131 23:03:53.615"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${contactTitle}</var>
+<arg>${child_Elements[2]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20230131 23:03:53.618" level="INFO">${contactTitle} = Marketing Manager</msg>
+<status status="PASS" starttime="20230131 23:03:53.616" endtime="20230131 23:03:53.618"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${Phone}</var>
+<arg>${child_Elements[3]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20230131 23:03:53.621" level="INFO">${Phone} = (503) 555-7555</msg>
+<status status="PASS" starttime="20230131 23:03:53.619" endtime="20230131 23:03:53.621"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${companyName}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230131 23:03:53.622" endtime="20230131 23:03:53.623"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${contactName}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230131 23:03:53.624" endtime="20230131 23:03:53.625"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${contactTitle}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230131 23:03:53.626" endtime="20230131 23:03:53.627"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Phone}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230131 23:03:53.627" endtime="20230131 23:03:53.628"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${contactName}</arg>
+<arg>Howard Snyder</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230131 23:03:53.629" endtime="20230131 23:03:53.630"/>
+</kw>
+<status status="PASS" starttime="20230131 23:03:53.581" endtime="20230131 23:03:53.630"/>
 </test>
-<status status="PASS" starttime="20230130 23:21:08.674" endtime="20230130 23:21:08.766"/>
+<status status="PASS" starttime="20230131 23:03:53.363" endtime="20230131 23:03:53.632"/>
 </suite>
 <statistics>
 <total>
@@ -81,16 +157,5 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230130 23:21:08.737" level="ERROR">Error in file 'C:\Users\Admin\PycharmProjects\APIAutomation\TestCases\TC5_xml.robot' on line 3: Importing library 'OS' failed: ModuleNotFoundError: No module named 'OS'
-Traceback (most recent call last):
-  None
-PYTHONPATH:
-  C:\Users\Admin\AppData\Local\Programs\Python\Python311\Scripts\robot.exe
-  C:\Users\Admin\AppData\Local\Programs\Python\Python311\python311.zip
-  C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib
-  C:\Users\Admin\AppData\Local\Programs\Python\Python311\DLLs
-  C:\Users\Admin\AppData\Roaming\Python\Python311\site-packages
-  C:\Users\Admin\AppData\Local\Programs\Python\Python311
-  C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
 </errors>
 </robot>
