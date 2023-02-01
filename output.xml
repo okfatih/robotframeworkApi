@@ -1,161 +1,789 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20230131 23:03:53.359" rpa="false" schemaversion="3">
-<suite id="s1" name="TC5 xml" source="C:\Users\Admin\PycharmProjects\APIAutomation\TestCases\TC5_xml.robot">
-<test id="s1-t1" name="TestCase1" line="9">
-<kw name="Parse Xml" library="XML">
-<var>${xml_obj}</var>
-<arg>C:/SeleniumPractice/xmldata/xmlFile.txt</arg>
-<doc>Parses the given XML file or string into an element structure.</doc>
-<msg timestamp="20230131 23:03:53.587" level="INFO">${xml_obj} = &lt;Element 'Root' at 0x000001E6DD1E1D50&gt;</msg>
-<status status="PASS" starttime="20230131 23:03:53.583" endtime="20230131 23:03:53.587"/>
+<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20230201 19:10:02.310" rpa="false" schemaversion="3">
+<suite id="s1" name="TC7 HeadersCookies" source="C:\Users\Admin\PycharmProjects\APIAutomation\TestCases\TC7_HeadersCookies.robot">
+<test id="s1-t1" name="TestHeaders" line="9">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230201 19:10:02.696" level="INFO">Creating Session using : alias=mysession, url=http://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230201 19:10:02.695" endtime="20230201 19:10:02.696"/>
 </kw>
-<kw name="Get Element Text" library="XML">
-<var>${emp_first}</var>
-<arg>${xml_obj}</arg>
-<arg>.//Customer[1]/Phone</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20230131 23:03:53.590" level="INFO">${emp_first} = (503) 555-7555</msg>
-<status status="PASS" starttime="20230131 23:03:53.588" endtime="20230131 23:03:53.590"/>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/photos</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20230201 19:10:02.697" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20230201 19:10:02.772" level="INFO">GET Request : url=http://jsonplaceholder.typicode.com/photos 
+ path_url=/photos 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230201 19:10:02.774" level="INFO">GET Response : url=http://jsonplaceholder.typicode.com/photos 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 01 Feb 2023 18:10:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1674899951', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"105970-HCYFejK2YCxztz8++2rHnutkPOQ"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '13768', 'Server-Timing': 'cf-q-config;dur=3.999999989901e-06', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=PVAhbI%2FgNSXucEYzq2PPH%2F1BVofWYUCwo6kyPmsEfAI6W13vIwteCVzKfZ8tfXyRVkYlzEi%2BOICwxLw5U2S0eFX0hY1r0SbhqfQ2iXHasA3xu6MgyGppx8ZAHznik%2BBI6juNZm538wBtsRb5RgLBfzsoe3FaeYitDEM0"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '792ca4476afd0a65-AMS', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body=[
+  {
+    "albumId": 1,
+    "id": 1,
+    "title": "accusamus beatae ad facilis cum similique qui sunt",
+    "url": "https://via.placeholder.com/600/92c952",
+    "thumbnailUrl": "https://via.placeholder.com/150/92c952"
+  },
+  {
+    "albumId": 1,
+    "id": 2,
+    "title": "reprehenderit est deserunt velit ipsam",
+    "url": "https://via.placeholder.com/600/771796",
+    "thumbnailUrl": "https://via.placeholder.com/150/771796"
+  },
+  {
+    "albumId": 1,
+    "id": 3,
+    "title": "officia porro iure quia iusto qui ipsa ut modi",
+    "url": "https://via.placeholder.com/600/24f355",
+    "thumbnailUrl": "https://via.placeholder.com/150/24f355"
+  },
+  {
+    "albumId": 1,
+    "id": 4,
+    "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+    "url": "https://via.placeholder.com/600/d32776",
+    "thumbnailUrl": "https://via.placeholder.com/150/d32776"
+  },
+  {
+    "albumId": 1,
+    "id": 5,
+    "title": "natus nisi omnis corporis facere molestiae rerum in",
+    "url": "https://via.placeholder.com/600/f66b97",
+    "thumbnailUrl": "https://via.placeholder.com/150/f66b97"
+  },
+  {
+    "albumId": 1,
+    "id": 6,
+    "title": "accusamus ea aliquid et amet sequi nemo",
+    "url": "https://via.placeholder.com/600/56a8c2",
+    "thumbnailUrl": "https://via.placeholder.com/150/56a8c2"
+  },
+  {
+    "albumId": 1,
+    "id": 7,
+    "title": "officia delectus consequatur vero aut veniam explicabo molestias",
+    "url": "https://via.placeholder.com/600/b0f7cc",
+    "thumbnailUrl": "https://via.placeholder.com/150/b0f7cc"
+  },
+  {
+    "albumId": 1,
+    "id": 8,
+    "title": "aut porro officiis laborum odit ea laudantium corporis",
+    "url": "https://via.placeholder.com/600/54176f",
+    "thumbnailUrl": "https://via.placeholder.com/150/54176f"
+  },
+  {
+    "albumId": 1,
+    "id": 9,
+    "title": "qui eius qui autem sed",
+    "url": "https://via.placeholder.com/600/51aa97",
+    "thumbnailUrl": "https://via.placeholder.com/150/51aa97"
+  },
+  {
+    "albumId": 1,
+    "id": 10,
+    "title": "beatae et provident et ut vel",
+    "url": "https://via.placeholder.com/600/810b14",
+    "thumbnailUrl": "https://via.placeholder.com/150/810b14"
+  },
+  {
+    "albumId": 1,
+    "id": 11,
+    "title": "nihil at amet non hic quia qui",
+    "url": "https://via.placeholder.com/600/1ee8a4",
+    "thumbnailUrl": "https://via.placeholder.com/150/1ee8a4"
+  },
+  {
+    "albumId": 1,
+    "id": 12,
+    "title": "mollitia soluta ut rerum eos aliquam consequatur perspiciatis maiores",
+    "url": "https://via.placeholder.com/600/66b7d2",
+    "thumbnailUrl": "https://via.placeholder.com/150/66b7d2"
+  },
+  {
+    "albumId": 1,
+    "id": 13,
+    "title": "repudiandae iusto deleniti rerum",
+    "url": "https://via.placeholder.com/600/197d29",
+    "thumbnailUrl": "https://via.placeholder.com/150/197d29"
+  },
+  {
+    "albumId": 1,
+    "id": 14,
+    "title": "est necessitatibus architecto ut laborum",
+    "url": "https://via.placeholder.com/600/61a65",
+    "thumbnailUrl": "https://via.placeholder.com/150/61a65"
+  },
+  {
+    "albumId": 1,
+    "id": 15,
+    "title": "harum dicta similique quis dolore earum ex qui",
+    "url": "https://via.placeholder.com/600/f9cee5",
+    "thumbnailUrl": "https://via.placeholder.com/150/f9cee5"
+  },
+  {
+    "albumId": 1,
+    "id": 16,
+    "title": "iusto sunt nobis quasi veritatis quas expedita voluptatum deserunt",
+    "url": "https://via.placeholder.com/600/fdf73e",
+    "thumbnailUrl": "https://via.placeholder.com/150/fdf73e"
+  },
+  {
+    "albumId": 1,
+    "id": 17,
+    "title": "natus doloribus necessitatibus ipsa",
+    "url": "https://via.placeholder.com/600/9c184f",
+    "thumbnailUrl": "https://via.placeholder.com/150/9c184f"
+  },
+  {
+    "albumId": 1,
+    "id": 18,
+    "title": "laboriosam odit nam necessitatibus et illum dolores reiciendis",
+    "url": "https://via.placeholder.com/600/1fe46f",
+    "thumbnailUrl": "https://via.placeholder.com/150/1fe46f"
+  },
+  {
+    "albumId": 1,
+    "id": 19,
+    "title": "perferendis nesciunt eveniet et optio a",
+    "url": "https://via.placeholder.com/600/56acb2",
+    "thumbnailUrl": "https://via.placeholder.com/150/56acb2"
+  },
+  {
+    "albumId": 1,
+    "id": 20,
+    "title": "assumenda voluptatem laboriosam enim consequatur veniam placeat reiciendis error",
+    "url": "https://via.placeholder.com/600/8985dc",
+    "thumbnailUrl": "https://via.placeholder.com/150/8985dc"
+  },
+  {
+    "albumId": 1,
+    "id": 21,
+    "title": "ad et natus qui",
+    "url": "https://via.placeholder.com/600/5e12c6",
+    "thumbnailUrl": "https://via.placeholder.com/150/5e12c6"
+  },
+  {
+    "albumId": 1,
+    "id": 22,
+    "title": "et ea illo et sit voluptas animi blanditiis porro",
+    "url": "https://via.placeholder.com/600/45601a",
+    "thumbnailUrl": "https://via.placeholder.com/150/45601a"
+  },
+  {
+    "albumId": 1,
+    "id": 23,
+    "title": "harum velit vero totam",
+    "url": "https://via.placeholder.com/600/e924e6",
+    "thumbnailUrl": "https://via.placeholder.com/150/e924e6"
+  },
+  {
+    "albumId": 1,
+    "id": 24,
+    "title": "beatae officiis ut aut",
+    "url": "https://via.placeholder.com/600/8f209a",
+    "thumbnailUrl": "https://via.placeholder.com/150/8f209a"
+  },
+  {
+    "albumId": 1,
+    "id": 25,
+    "title": "facere non quis fuga fugit vitae",
+    "url": "https://via.placeholder.com/600/5e3a73",
+    "thumbnailUrl": "https://via.placeholder.com/150/5e3a73"
+  },
+  {
+    "albumId": 1,
+    "id": 26,
+    "title": "asperiores nobis voluptate qui",
+    "url": "https://via.placeholder.com/600/474645",
+    "thumbnailUrl": "https://via.placeholder.com/150/474645"
+  },
+  {
+    "albumId": 1,
+    "id": 27,
+    "title": "sit asperiores est quos quis nisi veniam error",
+    "url": "https://via.placeholder.com/600/c984bf",
+    "thumbnailUrl": "https://via.placeholder.com/150/c984bf"
+  },
+  {
+    "albumId": 1,
+    "id": 28,
+    "title": "non neque eligendi molestiae repudiandae illum voluptatem qui aut",
+    "url": "https://via.placeholder.com/600/392537",
+    "thumbnailUrl": "https://via.placeholder.com/150/392537"
+  },
+  {
+    "albumId": 1,
+    "id": 29,
+    "title": "aut ipsam quos ab placeat omnis",
+    "url": "https://via.placeholder.com/600/602b9e",
+    "thumbnailUrl": "https://via.placeholder.com/150/602b9e"
+  },
+  {
+    "albumId": 1,
+    "id": 30,
+    "title": "odio enim voluptatem quidem aut nihil illum",
+    "url": "https://via.placeholder.com/600/372c93",
+    "thumbnailUrl": "https://via.placeholder.com/150/372c93"
+  },
+  {
+    "albumId": 1,
+    "id": 31,
+    "title": "voluptate voluptates sequi",
+    "url": "https://via.placeholder.com/600/a7c272",
+    "thumbnailUrl": "https://via.placeholder.com/150/a7c272"
+  },
+  {
+    "albumId": 1,
+    "id": 32,
+    "title": "ad enim dignissimos voluptatem similique",
+    "url": "https://via.placeholder.com/600/c70a4d",
+    "thumbnailUrl": "https://via.placeholder.com/150/c70a4d"
+  },
+  {
+    "albumId": 1,
+    "id": 33,
+    "title": "culpa ipsam nobis qui fuga magni et mollitia",
+    "url": "https://via.placeholder.com/600/501fe1",
+    "thumbnailUrl": "https://via.placeholder.com/150/501fe1"
+  },
+  {
+    "albumId": 1,
+    "id": 34,
+    "title": "vitae est facere quia itaque adipisci perferendis id maiores",
+    "url": "https://via.placeholder.com/600/35185e",
+    "thumbnailUrl": "https://via.placeholder.com/150/35185e"
+  },
+  {
+    "albumId": 1,
+    "id": 35,
+    "title": "tenetur minus voluptatum et",
+    "url": "https://via.placeholder.com/600/c96cad",
+    "thumbnailUrl": "https://via.placeholder.com/150/c96cad"
+  },
+  {
+    "albumId": 1,
+    "id": 36,
+    "title": "expedita rerum eaque",
+    "url": "https://via.placeholder.com/600/4d564d",
+    "thumbnailUrl": "https://via.placeholder.com/150/4d564d"
+  },
+  {
+    "albumId": 1,
+    "id": 37,
+    "title": "totam voluptas iusto deserunt dolores",
+    "url": "https://via.placeholder.com/600/ea51da",
+    "thumbnailUrl": "https://via.placeholder.com/150/ea51da"
+  },
+  {
+    "albumId": 1,
+    "id": 38,
+    "title": "natus magnam iure rerum pariatur molestias dolore nisi",
+    "url": "https://via.placeholder.com/600/4f5b8d",
+    "thumbnailUrl": "https://via.placeholder.com/150/4f5b8d"
+  },
+  {
+    "albumId": 1,
+    "id": 39,
+    "title": "molestiae nam ullam et rerum doloribus",
+    "url": "https://via.placeholder.com/600/1e71a2",
+    "thumbnailUrl": "https://via.placeholder.com/150/1e71a2"
+  },
+  {
+    "albumId": 1,
+    "id": 40,
+    "title": "est quas voluptates dignissimos sint praesentium nisi recusandae",
+    "url": "https://via.placeholder.com/600/3a0b95",
+    "thumbnailUrl": "https://via.placeholder.com/150/3a0b95"
+  },
+  {
+    "albumId": 1,
+    "id": 41,
+    "title": "in voluptatem doloremque cum atque architecto deleniti",
+    "url": "https://via.placeholder.com/600/659403",
+    "thumbnailUrl": "https://via.placeholder.com/150/659403"
+  },
+  {
+    "albumId": 1,
+    "id": 42,
+    "title": "voluptatibus a autem molestias voluptas architecto culpa",
+    "url": "https://via.placeholder.com/600/ca50ac",
+    "thumbnailUrl": "https://via.placeholder.com/150/ca50ac"
+  },
+  {
+    "albumId": 1,
+    "id": 43,
+    "title": "eius hic autem ad beatae voluptas",
+    "url": "https://via.placeholder.com/600/6ad437",
+    "thumbnailUrl": "https://via.placeholder.com/150/6ad437"
+  },
+  {
+    "albumId": 1,
+    "id": 44,
+    "title": "neque eum provident et inventore sed ipsam dignissimos quo",
+    "url": "https://via.placeholder.com/600/29fe9f",
+    "thumbnailUrl": "https://via.placeholder.com/150/29fe9f"
+  },
+  {
+    "albumId": 1,
+    "id": 45,
+    "title": "praesentium fugit quis aut voluptatum commodi dolore corrupti",
+    "url": "https://via.placeholder.com/600/c4084a",
+    "thumbnailUrl": "https://via.placeholder.com/150/c4084a"
+  },
+  {
+    "albumId": 1,
+    "id": 46,
+    "title": "quidem maiores in quia fugit dolore explicabo occaecati",
+    "url": "https://via.placeholder.com/600/e9b68",
+    "thumbnailUrl": "https://via.placeholder.com/150/e9b68"
+  },
+  {
+    "albumId": 1,
+    "id": 47,
+    "title": "et soluta est",... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20230201 19:10:02.775" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230201 19:10:02.697" endtime="20230201 19:10:02.775"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${emp_first}</arg>
+<arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230131 23:03:53.592" endtime="20230131 23:03:53.593"/>
-</kw>
-<kw name="Get Element Text" library="XML">
-<var>${emp_sec}</var>
-<arg>${xml_obj}</arg>
-<arg>.//Customer[2]/Phone</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20230131 23:03:53.594" level="INFO">${emp_sec} = (503) 555-6874</msg>
-<status status="PASS" starttime="20230131 23:03:53.593" endtime="20230131 23:03:53.594"/>
+<status status="PASS" starttime="20230201 19:10:02.775" endtime="20230201 19:10:02.777"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${emp_sec}</arg>
+<arg>${response.headers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230131 23:03:53.595" endtime="20230131 23:03:53.596"/>
+<status status="PASS" starttime="20230201 19:10:02.777" endtime="20230201 19:10:02.780"/>
 </kw>
-<kw name="Get Element Count" library="XML">
-<var>${numberOfCustomers}</var>
-<arg>${xml_obj}</arg>
-<arg>.//Customer</arg>
-<doc>Returns and logs how many elements the given ``xpath`` matches.</doc>
-<msg timestamp="20230131 23:03:53.598" level="INFO">4 elements matched './/Customer'.</msg>
-<msg timestamp="20230131 23:03:53.598" level="INFO">${numberOfCustomers} = 4</msg>
-<status status="PASS" starttime="20230131 23:03:53.597" endtime="20230131 23:03:53.598"/>
+<kw name="Get From Dictionary" library="Collections">
+<var>${ContentTypeValue}</var>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20230201 19:10:02.782" level="INFO">${ContentTypeValue} = application/json; charset=utf-8</msg>
+<status status="PASS" starttime="20230201 19:10:02.781" endtime="20230201 19:10:02.782"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${numberOfCustomers}</arg>
+<arg>${ContentTypeValue}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230131 23:03:53.598" endtime="20230131 23:03:53.599"/>
-</kw>
-<kw name="Should Be Equal As Integers" library="BuiltIn">
-<arg>${numberOfCustomers}</arg>
-<arg>4</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<msg timestamp="20230131 23:03:53.602" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20230131 23:03:53.600" endtime="20230131 23:03:53.602"/>
-</kw>
-<kw name="Element Attribute Should Be" library="XML">
-<arg>${xml_obj}</arg>
-<arg>CustomerID</arg>
-<arg>GREAL</arg>
-<arg>.//Customer[1]</arg>
-<doc>Verifies that the specified attribute is ``expected``.</doc>
-<status status="PASS" starttime="20230131 23:03:53.603" endtime="20230131 23:03:53.603"/>
-</kw>
-<kw name="Element Attribute Should Be" library="XML">
-<arg>${xml_obj}</arg>
-<arg>CustomerID</arg>
-<arg>HUNGC</arg>
-<arg>.//Customer[2]</arg>
-<doc>Verifies that the specified attribute is ``expected``.</doc>
-<status status="PASS" starttime="20230131 23:03:53.605" endtime="20230131 23:03:53.607"/>
-</kw>
-<kw name="Get Child Elements" library="XML">
-<var>${child_Elements}</var>
-<arg>${xml_obj}</arg>
-<arg>.//Customer[1]</arg>
-<doc>Returns the child elements of the specified element as a list.</doc>
-<msg timestamp="20230131 23:03:53.608" level="INFO">${child_Elements} = [&lt;Element 'CompanyName' at 0x000001E6DD1E1E40&gt;, &lt;Element 'ContactName' at 0x000001E6DD1E1EE0&gt;, &lt;Element 'ContactTitle' at 0x000001E6DD1E1F30&gt;, &lt;Element 'Phone' at 0x000001E6DD1E1FD0&gt;, &lt;Element 'FullAd...</msg>
-<status status="PASS" starttime="20230131 23:03:53.607" endtime="20230131 23:03:53.608"/>
-</kw>
-<kw name="Should Not Be Empty" library="BuiltIn">
-<arg>${child_Elements}</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<msg timestamp="20230131 23:03:53.609" level="INFO">Length is 5</msg>
-<status status="PASS" starttime="20230131 23:03:53.609" endtime="20230131 23:03:53.609"/>
-</kw>
-<kw name="Get Element Text" library="XML">
-<var>${companyName}</var>
-<arg>${child_Elements[0]}</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20230131 23:03:53.611" level="INFO">${companyName} = Great Lakes Food Market</msg>
-<status status="PASS" starttime="20230131 23:03:53.610" endtime="20230131 23:03:53.611"/>
-</kw>
-<kw name="Get Element Text" library="XML">
-<var>${contactName}</var>
-<arg>${child_Elements[1]}</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20230131 23:03:53.615" level="INFO">${contactName} = Howard Snyder</msg>
-<status status="PASS" starttime="20230131 23:03:53.612" endtime="20230131 23:03:53.615"/>
-</kw>
-<kw name="Get Element Text" library="XML">
-<var>${contactTitle}</var>
-<arg>${child_Elements[2]}</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20230131 23:03:53.618" level="INFO">${contactTitle} = Marketing Manager</msg>
-<status status="PASS" starttime="20230131 23:03:53.616" endtime="20230131 23:03:53.618"/>
-</kw>
-<kw name="Get Element Text" library="XML">
-<var>${Phone}</var>
-<arg>${child_Elements[3]}</arg>
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20230131 23:03:53.621" level="INFO">${Phone} = (503) 555-7555</msg>
-<status status="PASS" starttime="20230131 23:03:53.619" endtime="20230131 23:03:53.621"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${companyName}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230131 23:03:53.622" endtime="20230131 23:03:53.623"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${contactName}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230131 23:03:53.624" endtime="20230131 23:03:53.625"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${contactTitle}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230131 23:03:53.626" endtime="20230131 23:03:53.627"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${Phone}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230131 23:03:53.627" endtime="20230131 23:03:53.628"/>
+<status status="PASS" starttime="20230201 19:10:02.783" endtime="20230201 19:10:02.784"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
-<arg>${contactName}</arg>
-<arg>Howard Snyder</arg>
+<arg>${ContentTypeValue}</arg>
+<arg>application/json; charset=utf-8</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20230131 23:03:53.629" endtime="20230131 23:03:53.630"/>
+<status status="PASS" starttime="20230201 19:10:02.784" endtime="20230201 19:10:02.785"/>
 </kw>
-<status status="PASS" starttime="20230131 23:03:53.581" endtime="20230131 23:03:53.630"/>
+<kw name="Get From Dictionary" library="Collections">
+<var>${ContentEncoding}</var>
+<arg>${response.headers}</arg>
+<arg>Content-Encoding</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20230201 19:10:02.786" level="INFO">${ContentEncoding} = gzip</msg>
+<status status="PASS" starttime="20230201 19:10:02.785" endtime="20230201 19:10:02.787"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${ContentEncoding}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230201 19:10:02.787" endtime="20230201 19:10:02.788"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${ContentEncoding}</arg>
+<arg>gzip</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230201 19:10:02.788" endtime="20230201 19:10:02.789"/>
+</kw>
+<status status="PASS" starttime="20230201 19:10:02.694" endtime="20230201 19:10:02.789"/>
 </test>
-<status status="PASS" starttime="20230131 23:03:53.363" endtime="20230131 23:03:53.632"/>
+<test id="s1-t2" name="Test Cookies" line="26">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230201 19:10:02.792" level="INFO">Creating Session using : alias=mysession, url=http://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230201 19:10:02.792" endtime="20230201 19:10:02.792"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/photos</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20230201 19:10:02.793" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20230201 19:10:02.846" level="INFO">GET Request : url=http://jsonplaceholder.typicode.com/photos 
+ path_url=/photos 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230201 19:10:02.847" level="INFO">GET Response : url=http://jsonplaceholder.typicode.com/photos 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 01 Feb 2023 18:10:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1674888371', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"105970-HCYFejK2YCxztz8++2rHnutkPOQ"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '15673', 'Server-Timing': 'cf-q-config;dur=5.9999999848515e-06', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=sZenWefQRay1LlfEI6ZDW6L5TdKw%2BNVAzaQM2I57IIHi%2BF6G53jFct5t2NpYznfqZ5BiDyOgCb4O5hArCXUPNGRWbo9DJ2MRRk5jXsST24c9i5j8p1BFC1i2IWv1yWi4nwwxy1xw0eo%2FJZvjL5TIyoApbtc%2F254A9JDk"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '792ca447eeba0eb4-AMS', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body=[
+  {
+    "albumId": 1,
+    "id": 1,
+    "title": "accusamus beatae ad facilis cum similique qui sunt",
+    "url": "https://via.placeholder.com/600/92c952",
+    "thumbnailUrl": "https://via.placeholder.com/150/92c952"
+  },
+  {
+    "albumId": 1,
+    "id": 2,
+    "title": "reprehenderit est deserunt velit ipsam",
+    "url": "https://via.placeholder.com/600/771796",
+    "thumbnailUrl": "https://via.placeholder.com/150/771796"
+  },
+  {
+    "albumId": 1,
+    "id": 3,
+    "title": "officia porro iure quia iusto qui ipsa ut modi",
+    "url": "https://via.placeholder.com/600/24f355",
+    "thumbnailUrl": "https://via.placeholder.com/150/24f355"
+  },
+  {
+    "albumId": 1,
+    "id": 4,
+    "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+    "url": "https://via.placeholder.com/600/d32776",
+    "thumbnailUrl": "https://via.placeholder.com/150/d32776"
+  },
+  {
+    "albumId": 1,
+    "id": 5,
+    "title": "natus nisi omnis corporis facere molestiae rerum in",
+    "url": "https://via.placeholder.com/600/f66b97",
+    "thumbnailUrl": "https://via.placeholder.com/150/f66b97"
+  },
+  {
+    "albumId": 1,
+    "id": 6,
+    "title": "accusamus ea aliquid et amet sequi nemo",
+    "url": "https://via.placeholder.com/600/56a8c2",
+    "thumbnailUrl": "https://via.placeholder.com/150/56a8c2"
+  },
+  {
+    "albumId": 1,
+    "id": 7,
+    "title": "officia delectus consequatur vero aut veniam explicabo molestias",
+    "url": "https://via.placeholder.com/600/b0f7cc",
+    "thumbnailUrl": "https://via.placeholder.com/150/b0f7cc"
+  },
+  {
+    "albumId": 1,
+    "id": 8,
+    "title": "aut porro officiis laborum odit ea laudantium corporis",
+    "url": "https://via.placeholder.com/600/54176f",
+    "thumbnailUrl": "https://via.placeholder.com/150/54176f"
+  },
+  {
+    "albumId": 1,
+    "id": 9,
+    "title": "qui eius qui autem sed",
+    "url": "https://via.placeholder.com/600/51aa97",
+    "thumbnailUrl": "https://via.placeholder.com/150/51aa97"
+  },
+  {
+    "albumId": 1,
+    "id": 10,
+    "title": "beatae et provident et ut vel",
+    "url": "https://via.placeholder.com/600/810b14",
+    "thumbnailUrl": "https://via.placeholder.com/150/810b14"
+  },
+  {
+    "albumId": 1,
+    "id": 11,
+    "title": "nihil at amet non hic quia qui",
+    "url": "https://via.placeholder.com/600/1ee8a4",
+    "thumbnailUrl": "https://via.placeholder.com/150/1ee8a4"
+  },
+  {
+    "albumId": 1,
+    "id": 12,
+    "title": "mollitia soluta ut rerum eos aliquam consequatur perspiciatis maiores",
+    "url": "https://via.placeholder.com/600/66b7d2",
+    "thumbnailUrl": "https://via.placeholder.com/150/66b7d2"
+  },
+  {
+    "albumId": 1,
+    "id": 13,
+    "title": "repudiandae iusto deleniti rerum",
+    "url": "https://via.placeholder.com/600/197d29",
+    "thumbnailUrl": "https://via.placeholder.com/150/197d29"
+  },
+  {
+    "albumId": 1,
+    "id": 14,
+    "title": "est necessitatibus architecto ut laborum",
+    "url": "https://via.placeholder.com/600/61a65",
+    "thumbnailUrl": "https://via.placeholder.com/150/61a65"
+  },
+  {
+    "albumId": 1,
+    "id": 15,
+    "title": "harum dicta similique quis dolore earum ex qui",
+    "url": "https://via.placeholder.com/600/f9cee5",
+    "thumbnailUrl": "https://via.placeholder.com/150/f9cee5"
+  },
+  {
+    "albumId": 1,
+    "id": 16,
+    "title": "iusto sunt nobis quasi veritatis quas expedita voluptatum deserunt",
+    "url": "https://via.placeholder.com/600/fdf73e",
+    "thumbnailUrl": "https://via.placeholder.com/150/fdf73e"
+  },
+  {
+    "albumId": 1,
+    "id": 17,
+    "title": "natus doloribus necessitatibus ipsa",
+    "url": "https://via.placeholder.com/600/9c184f",
+    "thumbnailUrl": "https://via.placeholder.com/150/9c184f"
+  },
+  {
+    "albumId": 1,
+    "id": 18,
+    "title": "laboriosam odit nam necessitatibus et illum dolores reiciendis",
+    "url": "https://via.placeholder.com/600/1fe46f",
+    "thumbnailUrl": "https://via.placeholder.com/150/1fe46f"
+  },
+  {
+    "albumId": 1,
+    "id": 19,
+    "title": "perferendis nesciunt eveniet et optio a",
+    "url": "https://via.placeholder.com/600/56acb2",
+    "thumbnailUrl": "https://via.placeholder.com/150/56acb2"
+  },
+  {
+    "albumId": 1,
+    "id": 20,
+    "title": "assumenda voluptatem laboriosam enim consequatur veniam placeat reiciendis error",
+    "url": "https://via.placeholder.com/600/8985dc",
+    "thumbnailUrl": "https://via.placeholder.com/150/8985dc"
+  },
+  {
+    "albumId": 1,
+    "id": 21,
+    "title": "ad et natus qui",
+    "url": "https://via.placeholder.com/600/5e12c6",
+    "thumbnailUrl": "https://via.placeholder.com/150/5e12c6"
+  },
+  {
+    "albumId": 1,
+    "id": 22,
+    "title": "et ea illo et sit voluptas animi blanditiis porro",
+    "url": "https://via.placeholder.com/600/45601a",
+    "thumbnailUrl": "https://via.placeholder.com/150/45601a"
+  },
+  {
+    "albumId": 1,
+    "id": 23,
+    "title": "harum velit vero totam",
+    "url": "https://via.placeholder.com/600/e924e6",
+    "thumbnailUrl": "https://via.placeholder.com/150/e924e6"
+  },
+  {
+    "albumId": 1,
+    "id": 24,
+    "title": "beatae officiis ut aut",
+    "url": "https://via.placeholder.com/600/8f209a",
+    "thumbnailUrl": "https://via.placeholder.com/150/8f209a"
+  },
+  {
+    "albumId": 1,
+    "id": 25,
+    "title": "facere non quis fuga fugit vitae",
+    "url": "https://via.placeholder.com/600/5e3a73",
+    "thumbnailUrl": "https://via.placeholder.com/150/5e3a73"
+  },
+  {
+    "albumId": 1,
+    "id": 26,
+    "title": "asperiores nobis voluptate qui",
+    "url": "https://via.placeholder.com/600/474645",
+    "thumbnailUrl": "https://via.placeholder.com/150/474645"
+  },
+  {
+    "albumId": 1,
+    "id": 27,
+    "title": "sit asperiores est quos quis nisi veniam error",
+    "url": "https://via.placeholder.com/600/c984bf",
+    "thumbnailUrl": "https://via.placeholder.com/150/c984bf"
+  },
+  {
+    "albumId": 1,
+    "id": 28,
+    "title": "non neque eligendi molestiae repudiandae illum voluptatem qui aut",
+    "url": "https://via.placeholder.com/600/392537",
+    "thumbnailUrl": "https://via.placeholder.com/150/392537"
+  },
+  {
+    "albumId": 1,
+    "id": 29,
+    "title": "aut ipsam quos ab placeat omnis",
+    "url": "https://via.placeholder.com/600/602b9e",
+    "thumbnailUrl": "https://via.placeholder.com/150/602b9e"
+  },
+  {
+    "albumId": 1,
+    "id": 30,
+    "title": "odio enim voluptatem quidem aut nihil illum",
+    "url": "https://via.placeholder.com/600/372c93",
+    "thumbnailUrl": "https://via.placeholder.com/150/372c93"
+  },
+  {
+    "albumId": 1,
+    "id": 31,
+    "title": "voluptate voluptates sequi",
+    "url": "https://via.placeholder.com/600/a7c272",
+    "thumbnailUrl": "https://via.placeholder.com/150/a7c272"
+  },
+  {
+    "albumId": 1,
+    "id": 32,
+    "title": "ad enim dignissimos voluptatem similique",
+    "url": "https://via.placeholder.com/600/c70a4d",
+    "thumbnailUrl": "https://via.placeholder.com/150/c70a4d"
+  },
+  {
+    "albumId": 1,
+    "id": 33,
+    "title": "culpa ipsam nobis qui fuga magni et mollitia",
+    "url": "https://via.placeholder.com/600/501fe1",
+    "thumbnailUrl": "https://via.placeholder.com/150/501fe1"
+  },
+  {
+    "albumId": 1,
+    "id": 34,
+    "title": "vitae est facere quia itaque adipisci perferendis id maiores",
+    "url": "https://via.placeholder.com/600/35185e",
+    "thumbnailUrl": "https://via.placeholder.com/150/35185e"
+  },
+  {
+    "albumId": 1,
+    "id": 35,
+    "title": "tenetur minus voluptatum et",
+    "url": "https://via.placeholder.com/600/c96cad",
+    "thumbnailUrl": "https://via.placeholder.com/150/c96cad"
+  },
+  {
+    "albumId": 1,
+    "id": 36,
+    "title": "expedita rerum eaque",
+    "url": "https://via.placeholder.com/600/4d564d",
+    "thumbnailUrl": "https://via.placeholder.com/150/4d564d"
+  },
+  {
+    "albumId": 1,
+    "id": 37,
+    "title": "totam voluptas iusto deserunt dolores",
+    "url": "https://via.placeholder.com/600/ea51da",
+    "thumbnailUrl": "https://via.placeholder.com/150/ea51da"
+  },
+  {
+    "albumId": 1,
+    "id": 38,
+    "title": "natus magnam iure rerum pariatur molestias dolore nisi",
+    "url": "https://via.placeholder.com/600/4f5b8d",
+    "thumbnailUrl": "https://via.placeholder.com/150/4f5b8d"
+  },
+  {
+    "albumId": 1,
+    "id": 39,
+    "title": "molestiae nam ullam et rerum doloribus",
+    "url": "https://via.placeholder.com/600/1e71a2",
+    "thumbnailUrl": "https://via.placeholder.com/150/1e71a2"
+  },
+  {
+    "albumId": 1,
+    "id": 40,
+    "title": "est quas voluptates dignissimos sint praesentium nisi recusandae",
+    "url": "https://via.placeholder.com/600/3a0b95",
+    "thumbnailUrl": "https://via.placeholder.com/150/3a0b95"
+  },
+  {
+    "albumId": 1,
+    "id": 41,
+    "title": "in voluptatem doloremque cum atque architecto deleniti",
+    "url": "https://via.placeholder.com/600/659403",
+    "thumbnailUrl": "https://via.placeholder.com/150/659403"
+  },
+  {
+    "albumId": 1,
+    "id": 42,
+    "title": "voluptatibus a autem molestias voluptas architecto culpa",
+    "url": "https://via.placeholder.com/600/ca50ac",
+    "thumbnailUrl": "https://via.placeholder.com/150/ca50ac"
+  },
+  {
+    "albumId": 1,
+    "id": 43,
+    "title": "eius hic autem ad beatae voluptas",
+    "url": "https://via.placeholder.com/600/6ad437",
+    "thumbnailUrl": "https://via.placeholder.com/150/6ad437"
+  },
+  {
+    "albumId": 1,
+    "id": 44,
+    "title": "neque eum provident et inventore sed ipsam dignissimos quo",
+    "url": "https://via.placeholder.com/600/29fe9f",
+    "thumbnailUrl": "https://via.placeholder.com/150/29fe9f"
+  },
+  {
+    "albumId": 1,
+    "id": 45,
+    "title": "praesentium fugit quis aut voluptatum commodi dolore corrupti",
+    "url": "https://via.placeholder.com/600/c4084a",
+    "thumbnailUrl": "https://via.placeholder.com/150/c4084a"
+  },
+  {
+    "albumId": 1,
+    "id": 46,
+    "title": "quidem maiores in quia fugit dolore explicabo occaecati",
+    "url": "https://via.placeholder.com/600/e9b68",
+    "thumbnailUrl": "https://via.placeholder.com/150/e9b68"
+  },
+  {
+    "albumId": 1,
+    "id": 47,
+    "title": "et soluta est",... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20230201 19:10:02.848" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230201 19:10:02.793" endtime="20230201 19:10:02.848"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.cookies}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230201 19:10:02.849" endtime="20230201 19:10:02.850"/>
+</kw>
+<kw name="Should Be Empty" library="BuiltIn">
+<arg>${response.cookies}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<msg timestamp="20230201 19:10:02.852" level="INFO">Length is 0</msg>
+<status status="PASS" starttime="20230201 19:10:02.851" endtime="20230201 19:10:02.852"/>
+</kw>
+<status status="PASS" starttime="20230201 19:10:02.791" endtime="20230201 19:10:02.852"/>
+</test>
+<status status="PASS" starttime="20230201 19:10:02.315" endtime="20230201 19:10:02.854"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC5 xml">TC5 xml</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="TC7 HeadersCookies">TC7 HeadersCookies</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20230201 19:10:02.697" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20230201 19:10:02.793" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
 </errors>
 </robot>
